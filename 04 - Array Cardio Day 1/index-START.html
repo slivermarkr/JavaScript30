@@ -27,7 +27,7 @@
       { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
       { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
     ];
-
+    
     const people = [
       'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
       'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
@@ -38,10 +38,21 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    const filteredInventors = inventors.filter(fifthHundred);
 
+    function fifthHundred(inventor){
+      if(inventor.year >= 1500 && inventor.year <= 1600){
+        return true;
+      }
+    }
+  console.table(filteredInventors);
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
-
+  const fullName = inventors.map(filterFullName);
+  function filterFullName(inventor){
+    return inventor.first +" "+ inventor.last;
+  }
+  console.log(fullName)
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
 
