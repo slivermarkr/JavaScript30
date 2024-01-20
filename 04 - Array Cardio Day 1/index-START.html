@@ -104,12 +104,21 @@
 
       return aLast > bLast ? 1 : -1;
     };
-
     console.table(alphybet);
+
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    const transportation = data.reduce(noRepeat,{})
 
+    function noRepeat(object,item){
+      if(!object[item]){
+        object[item] = 0;
+      }
+      object[item]++;
+      return object
+    }
+    console.log(transportation);
   </script>
 </body>
 </html>
