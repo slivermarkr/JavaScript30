@@ -97,6 +97,18 @@
   </div>
 
 <script>
+  const checkboxes = document.querySelectorAll('[type="checkbox"]');
+
+
+  let lastChecked;
+  function handlecheck(e) {
+    
+    lastChecked = this;
+  }
+
+  checkboxes.forEach(box => {
+    box.addEventListener('click', handlecheck)
+  })
 </script>
 </body>
 </html>
